@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Central Park Burgas — новый центр жизни в Бургасе | OPTIMUS ESTATE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#FAF8F4;color:#3A3A3A;display:flex;flex-direction:column;align-items:center;font-weight:300}
+body>*{width:100%;max-width:1100px}
+img{display:block;width:100%;height:auto}
+
+/* ── NAVBAR ── */
+.navbar{background:#FAF8F4;padding:22px 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid #E5E1D8}
+.logo-block{display:flex;flex-direction:column;align-items:flex-start}
+.logo-leaf{width:22px;height:22px;margin-bottom:4px}
+.logo-name{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;color:#3A3A3A}
+.logo-sub{font-family:'Inter',sans-serif;font-size:8px;font-weight:400;letter-spacing:2px;color:#8A9A82;margin-top:2px}
+.btn-outline{border:1px solid #3A3A3A;color:#3A3A3A;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:11px 22px;text-decoration:none;background:transparent}
+.btn-outline:hover{background:#3A3A3A;color:#FAF8F4}
+
+/* ── HERO ── */
+.hero{position:relative}
+.hero-img{height:520px;object-fit:cover}
+.hero-overlay{position:absolute;bottom:0;left:0;padding:48px 40px;background:linear-gradient(to top,rgba(250,248,244,0.94),rgba(250,248,244,0));width:100%}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;color:#2A2A2A;line-height:1.05;text-transform:uppercase}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#5A6B54;margin-top:10px}
+.hero-line{width:50px;height:1px;background:#8A9A82;margin-top:18px}
+
+/* ── SECTION LABEL ── */
+.label{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#8A9A82;margin-bottom:10px}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:#2A2A2A;line-height:1.2;text-transform:uppercase}
+.sec-text{font-size:13px;color:#5C5C5C;line-height:1.75;margin-top:14px;font-weight:300}
+
+/* ── IDEA + NUMBERS ── */
+.idea-section{display:grid;grid-template-columns:1fr 1fr;background:#F0EDE4}
+.idea-photo{height:100%;min-height:340px;object-fit:cover}
+.idea-content{padding:44px 40px}
+.numbers-block{padding:0 40px 44px}
+.numbers-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px 20px;margin-top:8px}
+.num-item{border-left:1px solid #C9C4B5;padding-left:16px}
+.num-item:first-child{border-left:none;padding-left:0}
+.num-value{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:#2A2A2A}
+.num-label{font-size:10px;color:#8A8A8A;margin-top:4px;line-height:1.4}
+
+/* ── GALLERY GRID ── */
+.gallery-section{padding:60px 40px}
+.gallery-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;margin-top:28px}
+.gallery-grid-right{display:grid;grid-template-rows:1fr 1fr;gap:8px}
+.gallery-img{height:100%;object-fit:cover;min-height:190px}
+
+/* ── RESIDENCES ── */
+.residences{display:grid;grid-template-columns:1fr 1fr;background:#F0EDE4}
+.res-photo{height:100%;min-height:380px;object-fit:cover}
+.res-content{padding:44px 40px}
+.apt-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.apt-card{background:#FAF8F4;padding:20px;border:1px solid #E5E1D8}
+.apt-card-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#2A2A2A;margin-bottom:12px}
+.apt-row{display:flex;justify-content:space-between;font-size:11px;color:#5C5C5C;padding:5px 0;border-bottom:1px solid #E5E1D8}
+.apt-row:last-child{border-bottom:none}
+.apt-row b{color:#2A2A2A;font-weight:500}
+
+/* ── FULL IMAGE + OVERLAY TITLE ── */
+.full-img-section{position:relative}
+.full-img{height:460px;object-fit:cover}
+.full-img-overlay{position:absolute;bottom:0;left:0;padding:36px 40px}
+.full-img-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:#fff;text-transform:uppercase}
+.full-img-sub{font-size:12px;color:rgba(255,255,255,0.85);margin-top:6px;max-width:400px}
+
+/* ── LIFESTYLE ICONS ── */
+.lifestyle-section{padding:60px 40px;text-align:center}
+.icons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 12px;max-width:520px;margin:32px auto 0}
+.icon-item{display:flex;flex-direction:column;align-items:center;gap:8px}
+.icon-item svg{width:26px;height:26px;stroke:#8A9A82;fill:none;stroke-width:1.3}
+.icon-label{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#5C5C5C}
+
+/* ── SUSTAINABILITY ── */
+.sustain-section{display:grid;grid-template-columns:1fr 1fr;background:#F0EDE4}
+.sustain-content{padding:44px 40px}
+.sustain-list{margin-top:18px;list-style:none}
+.sustain-list li{font-size:12.5px;color:#5C5C5C;padding:9px 0;border-bottom:1px solid #DAD6C9;display:flex;align-items:center;gap:10px}
+.sustain-list li:before{content:'';width:5px;height:5px;background:#8A9A82;border-radius:50%;flex-shrink:0}
+
+/* ── WHY SECTION ── */
+.why-section{padding:60px 40px;text-align:center}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 20px;margin-top:32px;text-align:left}
+.why-item-title{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#2A2A2A;margin-bottom:6px}
+.why-item-text{font-size:12px;color:#8A8A8A;line-height:1.6}
+
+/* ── FINAL ── */
+.final-section{position:relative}
+.final-img{height:480px;object-fit:cover}
+.final-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:rgba(0,0,0,0.18)}
+.final-title{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:#fff;text-transform:uppercase;line-height:1.2}
+.final-sub{font-size:13px;letter-spacing:2px;color:rgba(255,255,255,0.85);margin-top:10px;text-transform:uppercase}
+
+/* ── CTA / CONTACTS ── */
+.cta-section{background:#2A2E28;padding:44px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#fff}
+.cta-sub{font-size:12px;color:rgba(255,255,255,0.65);margin-top:6px}
+.btn-cta{background:#8A9A82;color:#2A2E28;font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:13px 24px;text-decoration:none;display:inline-block}
+
+.contacts-section{background:#FAF8F4;padding:44px 40px}
+.contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.contact-card{border:1px solid #E5E1D8;padding:20px 24px;display:flex;align-items:center;justify-content:space-between}
+.contact-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#2A2A2A}
+.contact-phone{font-size:12px;color:#8A9A82;margin-top:2px}
+.btn-whatsapp{background:#2D9B6F;color:#fff;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;padding:9px 16px;text-decoration:none;white-space:nowrap}
+
+/* ── FOOTER ── */
+.footer{background:#FAF8F4;border-top:1px solid #E5E1D8;padding:28px 40px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.footer-links{font-size:11px;color:#8A8A8A}
+.footer-links a{color:#5A6B54;text-decoration:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:760px){
+  .navbar{padding:16px 20px}
+  .hero-img{height:380px}
+  .hero-title{font-size:34px}
+  .hero-overlay{padding:28px 20px}
+  .idea-section,.residences,.sustain-section{grid-template-columns:1fr}
+  .idea-photo,.res-photo{min-height:220px}
+  .idea-content,.res-content,.sustain-content,.numbers-block{padding:28px 20px}
+  .numbers-grid{grid-template-columns:1fr 1fr}
+  .gallery-section,.lifestyle-section,.why-section,.cta-section,.contacts-section{padding:36px 20px}
+  .gallery-grid{grid-template-columns:1fr}
+  .gallery-img{min-height:220px}
+  .apt-cards{grid-template-columns:1fr}
+  .icons-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .full-img,.final-img{height:320px}
+  .full-img-title{font-size:22px}
+  .final-title{font-size:26px}
+  .contacts-grid{grid-template-columns:1fr}
+  .cta-section{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <div class="logo-block">
+    <svg class="logo-leaf" viewBox="0 0 24 24" fill="none" stroke="#8A9A82" stroke-width="1.3"><path d="M12 2C8 6 6 10 6 14a6 6 0 0 0 12 0c0-4-2-8-6-12z"/><path d="M12 8v14"/></svg>
+    <div class="logo-name">CENTRAL PARK</div>
+    <div class="logo-sub">BURGAS</div>
+  </div>
+  <a href="https://optimus-presentacion-ru.netlify.app/" class="btn-outline">Все проекты OPTIMUS</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <img src="centralpark-hero.jpg" alt="Central Park Burgas — вид с высоты" class="hero-img"/>
+  <div class="hero-overlay">
+    <h1 class="hero-title">Central Park<br>Burgas</h1>
+    <p class="hero-sub">Новый центр жизни в Бургасе</p>
+    <div class="hero-line"></div>
+  </div>
+</section>
+
+<!-- ══ ИДЕЯ + ЦИФРЫ ══ -->
+<section class="idea-section">
+  <img src="centralpark-1.jpg" alt="Центральный парк — терраса кафе" class="idea-photo"/>
+  <div>
+    <div class="idea-content">
+      <p class="label">Идея</p>
+      <h2 class="sec-title">Жить. Работать.<br>Отдыхать. Общаться.</h2>
+      <p class="sec-text">Central Park — это больше, чем жилой комплекс. Это современная городская экосистема, объединяющая жильё, бизнес, гостиничную инфраструктуру, торговлю, отдых и благоустроенное общественное пространство в единой среде.</p>
+    </div>
+    <div class="numbers-block">
+      <p class="label">Цифры</p>
+      <div class="numbers-grid">
+        <div class="num-item"><div class="num-value">40 000 м²</div><div class="num-label">общая площадь застройки</div></div>
+        <div class="num-item"><div class="num-value">2</div><div class="num-label">жилые башни</div></div>
+        <div class="num-item"><div class="num-value">460</div><div class="num-label">апартаментов</div></div>
+        <div class="num-item"><div class="num-value">20</div><div class="num-label">этажей</div></div>
+        <div class="num-item"><div class="num-value">230</div><div class="num-label">паркомест на башню</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ АРХИТЕКТУРА ══ -->
+<section class="gallery-section">
+  <p class="label">Архитектура</p>
+  <h2 class="sec-title">Две башни.<br>Один адрес.</h2>
+  <p class="sec-text" style="max-width:520px;">Современная архитектура, чистые линии и натуральные материалы создают неподвластный времени облик. Две жилые башни гармонично вписаны в ландшафт и городскую среду.</p>
+  <div class="gallery-grid">
+    <img src="centralpark-2.jpg" alt="Central Park — две башни" class="gallery-img"/>
+    <div class="gallery-grid-right">
+      <img src="centralpark-3.jpg" alt="Фасад — балконы крупным планом" class="gallery-img"/>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <img src="centralpark-4.jpg" alt="Вид с высоты на территорию" class="gallery-img"/>
+        <img src="centralpark-5.jpg" alt="Ландшафтный план территории" class="gallery-img"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ РЕЗИДЕНЦИИ ══ -->
+<section class="residences">
+  <img src="centralpark-6.jpg" alt="Интерьер гостиной с видом на море" class="res-photo"/>
+  <div class="res-content">
+    <p class="label">Резиденции</p>
+    <h2 class="sec-title">2- и 3-комнатные<br>апартаменты</h2>
+    <p class="sec-text">Просторные планировки, естественный свет и современный дизайн — для комфортной жизни круглый год.</p>
+    <div class="apt-cards">
+      <div class="apt-card">
+        <div class="apt-card-title">2-комнатный апартамент</div>
+        <div class="apt-row"><span>Площадь</span><b>85 м²</b></div>
+        <div class="apt-row"><span>Этаж</span><b>5</b></div>
+        <div class="apt-row"><span>Ориентация</span><b>Юго-восток</b></div>
+        <div class="apt-row"><span>Особенность</span><b>Просторная гостиная и терраса</b></div>
+      </div>
+      <div class="apt-card">
+        <div class="apt-card-title">3-комнатный апартамент</div>
+        <div class="apt-row"><span>Площадь</span><b>120 м²</b></div>
+        <div class="apt-row"><span>Этаж</span><b>12</b></div>
+        <div class="apt-row"><span>Ориентация</span><b>Юго-запад</b></div>
+        <div class="apt-row"><span>Особенность</span><b>Панорамный вид и большая терраса</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ВИД ══ -->
+<section class="full-img-section">
+  <img src="centralpark-7.jpg" alt="Бургас с высоты птичьего полёта" class="full-img"/>
+  <div class="full-img-overlay">
+    <p class="full-img-title">Бургас с высоты</p>
+    <p class="full-img-sub">Высота, простор и уникальный ракурс на море и город.</p>
+  </div>
+</section>
+
+<!-- ══ LIFESTYLE ══ -->
+<section class="lifestyle-section">
+  <p class="label">Стиль жизни</p>
+  <h2 class="sec-title">Всё в шаговой доступности</h2>
+  <div class="icons-grid">
+    <div class="icon-item"><svg viewBox="0 0 24 24"><path d="M3 2v20M3 7h4M7 2v9a4 4 0 0 1-4 4M17 2v20M17 8a3 3 0 0 0 3-3V2M17 8a3 3 0 0 1-3-3V2"/></svg><span class="icon-label">Рестораны</span></div>
+    <div class="icon-item"><svg viewBox="0 0 24 24"><path d="M6.5 6.5 17.5 17.5M6.5 6.5a2.12 2.12 0 0 1 0-3 2.12 2.12 0 0 1 3 0l11 11a2.12 2.12 0 0 1 0 3 2.12 2.12 0 0 1-3 0zM4 20l3.5-3.5"/></svg><span class="icon-label">Фитнес</span></div>
+    <div class="icon-item"><svg viewBox="0 0 24 24"><path d="M12 2s-6 6-6 11a6 6 0 0 0 12 0c0-5-6-11-6-11z"/></svg><span class="icon-label">SPA</span></div>
+    <div class="icon-item"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="icon-label">Магазины</span></div>
+    <div class="icon-item"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span class="icon-label">Бизнес</span></div>
+    <div class="icon-item"><svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V10l8-6 8 6v10M9 20v-6h6v6"/></svg><span class="icon-label">Отель</span></div>
+    <div class="icon-item"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg><span class="icon-label">Парк</span></div>
+    <div class="icon-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="icon-label">Ботанический сад</span></div>
+  </div>
+  <div style="height:24px;"></div>
+  <img src="centralpark-8.jpg" alt="Мастер-план территории" style="border-radius:2px;"/>
+</section>
+
+<!-- ══ ПАРК ══ -->
+<section class="full-img-section">
+  <img src="centralpark-9.jpg" alt="Ландшафтный парк с водоёмом" class="full-img"/>
+  <div class="full-img-overlay">
+    <p class="full-img-title">Место, где можно дышать</p>
+    <p class="full-img-sub">Зелёные зоны, вода, пешеходные дорожки и ботанический сад создают уголок природы в самом сердце города.</p>
+  </div>
+</section>
+
+<!-- ══ УСТОЙЧИВОЕ РАЗВИТИЕ ══ -->
+<section class="sustain-section">
+  <div class="sustain-content">
+    <p class="label">Устойчивое развитие</p>
+    <h2 class="sec-title">Построено для будущего</h2>
+    <ul class="sustain-list">
+      <li>Солнечная энергия</li>
+      <li>Управление водными ресурсами</li>
+      <li>Энергоэффективность</li>
+      <li>Благоустроенная среда</li>
+      <li>Устойчивые технологии</li>
+    </ul>
+  </div>
+  <img src="centralpark-10.jpg" alt="Схема устойчивых технологий комплекса" class="res-photo"/>
+</section>
+
+<!-- ══ БОЛЬШЕ, ЧЕМ ДОМ ══ -->
+<section class="full-img-section">
+  <img src="centralpark-11.jpg" alt="Мастер-план — жильё, офисы, отель" class="full-img"/>
+  <div class="full-img-overlay">
+    <p class="full-img-title">Жить / Работать / Останавливаться / Отдыхать</p>
+    <p class="full-img-sub">Жильё, офисы, гостиница и зоны отдыха сосуществуют в единой гармоничной среде — городская экосистема, а не просто жилой комплекс.</p>
+  </div>
+</section>
+
+<!-- ══ БИЗНЕС ══ -->
+<section class="residences">
+  <img src="centralpark-12.jpg" alt="Современное офисное пространство" class="res-photo"/>
+  <div class="res-content">
+    <p class="label">Бизнес и работа</p>
+    <h2 class="sec-title">Современные офисы<br>для современного бизнеса</h2>
+    <p class="sec-text">Гибкие пространства, отличная доступность и деловая среда, вдохновляющая на рост — в шаговой доступности от жилых башен и зон отдыха.</p>
+  </div>
+</section>
+
+<!-- ══ РАСПОЛОЖЕНИЕ ══ -->
+<section class="lifestyle-section" style="text-align:left;">
+  <p class="label">Расположение</p>
+  <h2 class="sec-title">Связан с Бургасом</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px;align-items:start;">
+    <div>
+      <div class="apt-row" style="border-bottom:1px solid #E5E1D8;padding:12px 0;"><span>Центр города</span><b>10 мин</b></div>
+      <div class="apt-row" style="border-bottom:1px solid #E5E1D8;padding:12px 0;"><span>Пляж</span><b>10 мин</b></div>
+      <div class="apt-row" style="border-bottom:1px solid #E5E1D8;padding:12px 0;"><span>Аэропорт</span><b>15 мин</b></div>
+      <div class="apt-row" style="padding:12px 0;"><span>Бургас — София</span><b>2,5 ч</b></div>
+    </div>
+    <img src="centralpark-13.jpg" alt="Карта расположения Central Park в Бургасе"/>
+  </div>
+</section>
+
+<!-- ══ ГОРОД ══ -->
+<section class="gallery-section">
+  <p class="label">Город</p>
+  <h2 class="sec-title">Бургас</h2>
+  <p class="sec-text" style="max-width:520px;">Современный город с богатой культурной жизнью, красивыми парками и уникальной береговой линией.</p>
+  <div class="gallery-grid">
+    <img src="centralpark-14.jpg" alt="Панорама Бургаса" class="gallery-img"/>
+    <div class="gallery-grid-right">
+      <img src="centralpark-15.jpg" alt="Маяк и набережная Бургаса" class="gallery-img"/>
+      <img src="centralpark-16.jpg" alt="Приморский парк Бургаса" class="gallery-img"/>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ПОЧЕМУ CENTRAL PARK ══ -->
+<section class="why-section">
+  <p class="label">Почему Central Park</p>
+  <h2 class="sec-title">Ключевые преимущества</h2>
+  <div class="why-grid">
+    <div><div class="why-item-title">Архитектура</div><div class="why-item-text">Безупречный дизайн и высококачественные материалы.</div></div>
+    <div><div class="why-item-title">Природа</div><div class="why-item-text">Зелёные пространства и здоровая среда обитания.</div></div>
+    <div><div class="why-item-title">Расположение</div><div class="why-item-text">В самом сердце Бургаса, рядом со всем необходимым.</div></div>
+    <div><div class="why-item-title">Стиль жизни</div><div class="why-item-text">Работа, отдых и развлечения — в одном месте.</div></div>
+    <div><div class="why-item-title">Энергоэффективность</div><div class="why-item-text">Современные технологии для устойчивого будущего.</div></div>
+    <div><div class="why-item-title">Сервис</div><div class="why-item-text">Комфорт и удобство на каждый день.</div></div>
+    <div><div class="why-item-title">Инвестиционный потенциал</div><div class="why-item-text">Стабильный спрос и высокая доходность.</div></div>
+  </div>
+</section>
+
+<!-- ══ ФИНАЛЬНЫЙ ЭКРАН ══ -->
+<section class="final-section">
+  <img src="centralpark-17.jpg" alt="Терраса с видом на море на закате" class="final-img"/>
+  <div class="final-overlay">
+    <p class="final-title">Ваше место в городе.</p>
+    <p class="final-sub">Central Park Burgas</p>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <div>
+    <p class="cta-title">Готовы показать клиенту?</p>
+    <p class="cta-sub">Смотрите актуальный прайс на апартаменты Central Park</p>
+  </div>
+  <a href="https://airtable.com/app4flQF8p47DvF7v/shrvIqf8UItHoXTLd/tbl56x9OZb7wZEV4W" class="btn-cta">Смотреть цены →</a>
+</section>
+
+<!-- ══ КОНТАКТЫ ══ -->
+<section class="contacts-section">
+  <p class="label">Свяжитесь с нами</p>
+  <h2 class="sec-title" style="font-size:24px;">По вопросам осмотров</h2>
+  <div class="contacts-grid">
+    <div class="contact-card">
+      <div><div class="contact-name">Александр</div><div class="contact-phone">+359 87 769 25 46</div></div>
+      <a href="https://wa.me/359877692546" class="btn-whatsapp">WhatsApp</a>
+    </div>
+    <div class="contact-card">
+      <div><div class="contact-name">Василий</div><div class="contact-phone">+359 89 517 66 85</div></div>
+      <a href="https://wa.me/359895176685" class="btn-whatsapp">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-links"><a href="mailto:optimusbg@mail.ru">optimusbg@mail.ru</a> &nbsp;·&nbsp; <a href="https://bolgarskidom.com">bolgarskidom.com</a></div>
+  <div class="footer-links">Central Park Burgas · Презентация OPTIMUS ESTATE</div>
+</footer>
+
+</body>
+</html>

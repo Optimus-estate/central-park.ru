@@ -217,6 +217,20 @@ img{display:block;width:100%;height:auto}
   .hero-sub{font-size:20px}
   .sec-text{font-size:15px}
 }
+
+/* ── КОМПАКТНЫЕ ФОТО (вариант Б, максимально) ── */
+.hero-img{height:340px}
+.full-img{height:280px}
+.idea-photo{min-height:260px}
+.res-photo{min-height:260px}
+.gallery-img{min-height:140px}
+@media(max-width:760px){
+  .hero-img{height:260px}
+  .full-img{height:190px}
+  .idea-photo,.res-photo{min-height:150px;max-height:190px}
+  .gallery-img{min-height:140px;max-height:170px}
+  .loc-map img{max-height:190px}
+}
 </style>
 </head>
 <body id="top">

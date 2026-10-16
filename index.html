@@ -188,7 +188,36 @@ img{display:block;width:100%;height:auto}
   .icon-label{font-size:11px}
   .why-item-text,.apt-row{font-size:14px}
 }
-.icon-item svg{width:30px;height:30px;stroke-width:1.5}</style>
+.icon-item svg{width:30px;height:30px;stroke-width:1.5}
+/* ── КАРТА ── */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px;align-items:start}
+.loc-map{position:relative;display:block;border-radius:6px;overflow:hidden;box-shadow:0 8px 24px rgba(42,46,40,.16);text-decoration:none}
+.loc-chip{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:6px;background:#2A2E28;color:#fff;font-size:11px;font-weight:600;letter-spacing:.4px;padding:8px 12px;border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.loc-chip svg{width:13px;height:13px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* ── ЕДИНАЯ ШКАЛА ШРИФТОВ (как в Аполлоне и Тарсисе) ── */
+.hero-title{font-size:44px}
+.sec-title{font-size:30px}
+.contacts-section .sec-title{font-size:26px!important}
+.num-value{font-size:32px}
+.cta-title{font-size:24px}
+.final-title{font-size:34px}
+.hero-sub{font-size:22px}
+.sec-text{font-size:14px}
+@media(min-width:1500px){body>*{max-width:1240px}}
+@media(max-width:760px){
+  .loc-grid{grid-template-columns:1fr;gap:20px}
+  .loc-map img{max-height:320px;object-fit:cover}
+  .loc-chip{font-size:12px}
+  .hero-title{font-size:32px}
+  .sec-title{font-size:26px}
+  .contacts-section .sec-title{font-size:24px!important}
+  .num-value{font-size:28px}
+  .cta-title{font-size:22px}
+  .final-title{font-size:26px}
+  .hero-sub{font-size:20px}
+  .sec-text{font-size:15px}
+}
+</style>
 </head>
 <body id="top">
 
@@ -348,14 +377,14 @@ img{display:block;width:100%;height:auto}
 <section class="lifestyle-section" style="text-align:left;">
   <p class="label">Расположение</p>
   <h2 class="sec-title">Связан с Бургасом</h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px;align-items:start;">
+  <div class="loc-grid">
     <div>
       <div class="apt-row" style="border-bottom:1px solid #E5E1D8;padding:12px 0;"><span>Центр города</span><b>10 мин</b></div>
       <div class="apt-row" style="border-bottom:1px solid #E5E1D8;padding:12px 0;"><span>Пляж</span><b>10 мин</b></div>
       <div class="apt-row" style="border-bottom:1px solid #E5E1D8;padding:12px 0;"><span>Аэропорт</span><b>15 мин</b></div>
       <div class="apt-row" style="padding:12px 0;"><span>Бургас — София</span><b>2,5 ч</b></div>
     </div>
-    <img loading="lazy" src="karta.jpg" alt="Карта расположения Central Park в Бургасе"/>
+    <a class="loc-map" href="https://maps.app.goo.gl/GAAk5p1nRFBs9LcbA" target="_blank" rel="noopener" aria-label="Открыть Central Park на карте"><img loading="lazy" src="karta.jpg" alt="Карта расположения Central Park в Бургасе"/><span class="loc-chip"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>Открыть на карте</span></a>
   </div>
 </section>
 
